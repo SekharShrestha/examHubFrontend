@@ -1,0 +1,32 @@
+<mat-card>
+    <div><h2>Add New Category</h2></div>
+
+    <div>
+    <form (ngSubmit)="formSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>Enter Title</mat-label>
+        <input required type="text" 
+        [(ngModel)]="category.title"
+        name="title"
+        matInput placeholder="Enter Title">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field  class="full-width" appearance="outline">
+        <mat-label>Enter Description</mat-label>
+        <input type="text" 
+        [(ngModel)]="category.description"
+        name="description"
+        matInput placeholder="Enter Description">
+    </mat-form-field>
+
+    <div class="container">
+        <button submit routerLink="/admin/add-category" mat-raised-button color="primary">Add</button>
+    </div>
+
+</form>
+
+</div>
+
+</mat-card>

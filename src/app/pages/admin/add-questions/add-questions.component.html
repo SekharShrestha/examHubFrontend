@@ -1,0 +1,102 @@
+<mat-card>
+
+    <div><h2>Add New Question</h2></div>
+
+    <!-- {{questions | json}} -->
+    <div>
+    <form (ngSubmit)="formSubmit()">
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Enter the question</mat-label>
+        <input required type="text" 
+        [(ngModel)]="questions.content"
+        name="title"
+        matInput placeholder="Enter the question">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Enter 1st option</mat-label>
+        <input required type="text" 
+        [(ngModel)]="questions.option1"
+        name="description"
+        matInput placeholder="Enter 1st option">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Enter 2nd option</mat-label>
+        <input required type="text" 
+        [(ngModel)]="questions.option2"
+        name="noOfQuestions"
+        matInput placeholder="Enter 2nd option">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Enter 3rd option</mat-label>
+        <input required type="text" 
+        [(ngModel)]="questions.option3"
+        name="maxMarks"
+        matInput placeholder="Enter 3rd option">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Enter 4th option</mat-label>
+        <input required type="text" 
+        [(ngModel)]="questions.option4"
+        name="maxMarks"
+        matInput placeholder="Enter 4th option">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Select answer</mat-label>
+        <mat-select required name = "ans" [(ngModel)]="questions.ans">
+            <mat-option *ngIf="questions.option1" [value]="questions.option1">{{questions.option1}}</mat-option>
+            <mat-option *ngIf="questions.option2" [value]="questions.option2">{{questions.option2}}</mat-option>
+            <mat-option *ngIf="questions.option3" [value]="questions.option3">{{questions.option3}}</mat-option>
+            <mat-option *ngIf="questions.option4" [value]="questions.option4">{{questions.option4}}</mat-option>
+            
+        </mat-select>
+        <!-- <input required type="text" 
+        [(ngModel)]="questions.ans"
+        name="maxMarks"
+        matInput placeholder="Enter answer"> -->
+    </mat-form-field>
+
+    <br>
+
+    <!-- <mat-form-field appearance="outline">
+        <mat-label>Enter Categories</mat-label>
+        <input required type="text" 
+        [(ngModel)]="exams.category.title"
+        name="category"
+        matInput placeholder="Enter Category">
+    </mat-form-field> -->
+
+    
+
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Enter Category</mat-label>
+        <mat-select name="category" [(ngModel)]="exams.category.title">
+            <mat-option *ngFor="let i of category" [ngValue]="i">
+                {{i.title}}
+            </mat-option>
+    </mat-select>
+    </mat-form-field> -->
+
+    <div class="container">
+        <button submit  mat-raised-button color="primary">Add</button>
+    </div>
+
+</form>
+
+</div>
+
+</mat-card>

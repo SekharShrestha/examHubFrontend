@@ -1,0 +1,57 @@
+
+<div class="bootstrap-wrapper">
+
+    
+
+    <div class="container">
+
+        <div class="row" style="margin-top: 20px;">
+
+            <div class="col-md-6 offset-md-3">
+                <!-- <video src="../../../assets/video.mp4" muted loop autoplay></video> -->
+                
+                <div class="container text-center">
+                    <img src="../../../assets/logo-modified.png" alt="">
+                </div>
+
+                <h1 class="text-center">Login</h1>
+
+
+                <form (ngSubmit)="formSubmit()">
+                    <!-- Username -->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input
+                    required
+                    [(ngModel)]="loginData.userName"
+                    name="userName"
+                    matInput placeholder="Enter username">
+                </mat-form-field>
+
+                <!-- Password -->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input required type="password" 
+                    [(ngModel)]="loginData.password"
+                    name="password"
+                    matInput placeholder="Enter Password">
+                </mat-form-field>
+
+                <div class="container text-center">
+                    <button type="submit" mat-raised-button color="primary">Login</button>
+                    
+                    
+                </div>
+                
+                </form>
+
+                
+                
+                
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

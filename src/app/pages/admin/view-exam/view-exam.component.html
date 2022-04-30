@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-list>
+
+        <div><h2>All Exams</h2></div>
+        <mat-list-item *ngFor="let i of exams">
+            <mat-icon mat-list-icon>edit</mat-icon>
+            <div mat-line class="left20">{{i.title}} ({{i.category.title}})</div>
+            <div mat-line class="left20">{{i.description}}</div>
+            <div mat-line class="left20">No. of Question = {{i.noOfQuestions}}</div>
+            <div mat-line class="left20">Full Marks = {{i.maxMarks}}</div>
+
+            <button mat-raised-button color="primary" class="right-margin" [routerLink]="'/admin/view-questions/'+i.qid+'/'+i.title">Questions</button>
+
+
+            <button mat-raised-button color="primary" class="right-margin" [routerLink]="'/admin/exam/'+i.qid">Update</button>
+
+            <button mat-raised-button color="warn" (click)="deleteExam(i.qid)" class="right-margin" >Delete</button>
+            <mat-divider></mat-divider>
+
+        </mat-list-item>
+
+        <!-- <div class="container text-center mt20">
+            <button mat-raised-button color="primary">Add New Category</button>
+        </div> -->
+
+    </mat-list>
+</mat-card>

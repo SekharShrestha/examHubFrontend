@@ -1,0 +1,39 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+
+        <h1>Available Exams</h1>
+
+        <div class="row" *ngIf="exams">
+
+            <div class="col-md-4" *ngFor="let i of exams">
+
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-subtitle>
+                            {{i.category.title}}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+
+                    <h2>{{i.title}}</h2>
+                    <br>
+                    <!-- <b>No. of Questions = </b>{{i.noOfQuestions}} -->
+                    <!-- <br> -->
+                    <b>Full Marks = </b>{{i.maxMarks}}
+                    <br>
+                    <br>
+                    {{i.description}}
+
+                    <br>
+                    <br>
+                    <button type="submit" mat-raised-button color="warn" [routerLink]="'/user-dashboard/instructions/'+i.qid">Start</button>
+                </mat-card>
+                
+            </div>
+
+            <div class="cold-md-12 left-margin" *ngIf="exams.length == 0">
+                <h2>No exams available</h2>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<mat-card>
+
+    <div><h2>Update Exam</h2></div>
+
+    <!-- {{exams | json}} -->
+    <div>
+    <form *ngIf="exams" (submit)="updateData()">
+    <mat-form-field appearance="outline">
+        <mat-label>Enter Title</mat-label>
+        <input required type="text" 
+        [(ngModel)]="exams.title"
+        name="title"
+        matInput placeholder="Enter Title">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field  class="full-width" appearance="outline">
+        <mat-label>Enter Description</mat-label>
+        <input type="text" 
+        [(ngModel)]="exams.description"
+        name="description"
+        matInput placeholder="Enter Description">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Enter no. of questions</mat-label>
+        <input type="text" 
+        [(ngModel)]="exams.noOfQuestions"
+        name="noOfQuestions"
+        matInput placeholder="Enter no. of questions">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Enter Full Marks</mat-label>
+        <input required type="text" 
+        [(ngModel)]="exams.maxMarks"
+        name="maxMarks"
+        matInput placeholder="Enter Full Marks">
+    </mat-form-field>
+
+    <br>
+
+    <!-- <mat-form-field appearance="outline">
+        <mat-label>Enter Categories</mat-label>
+        <input required type="text" 
+        [(ngModel)]="exams.category.title"
+        name="category"
+        matInput placeholder="Enter Category">
+    </mat-form-field> -->
+
+    <mat-form-field appearance="fill">
+        <mat-label>Enter Category</mat-label>
+        <mat-select name="category" [(ngModel)]="exams.category.cid">
+          <mat-option *ngFor="let i of category" [value]="i.cid">
+            {{i.title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Enter Category</mat-label>
+        <mat-select name="category" [(ngModel)]="exams.category.title">
+            <mat-option *ngFor="let i of category" [ngValue]="i">
+                {{i.title}}
+            </mat-option>
+    </mat-select>
+    </mat-form-field> -->
+
+    <div class="container">
+        <button submit mat-raised-button color="primary">Add</button>
+    </div>
+
+</form>
+
+</div>
+
+</mat-card>

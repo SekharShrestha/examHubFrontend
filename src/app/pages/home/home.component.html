@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <!-- <video src=""></video> -->
+
+    <h1 class="left100">Welcome to ExamHub</h1>
+
+    <p class="left100">Dori me, interimo adapare dori me
+        Ameno, ameno, latire, latire mo
+        Dori me, ameno, oma nare imperavi ameno
+        Dimere, dimere, mantiro, mantire mo
+        Ameno
+    <br>
+        (Oma nare imperavi emu nare, ameno)
+    (Oma nare imperavi emu nare)
+    Ameno, ameno do re-, ameno dori me
+    Ameno dori me, ameno do-
+    Dori me reo, ameno dori me
+    Ameno dori me, dori me a-
+    <br>
+    Ameno, oma nare imperavi ameno
+    Dimere, dimere, mantiro, mantire mo
+    Ameno
+    <br>
+    (Oma nare imperavi emu nare, ameno)
+    (Oma nare imperavi emu nare, ameno)
+    <br>
+    <br>
+    Ameno do re-, ameno dori me
+    Ameno dori me, ameno do-
+    Dori me reo, ameno dori me
+    Ameno dori me, do-ori me
+    <br>
+    Ameno dori me, ameno dori me
+    Do-omine
+    <br>
+    (Do-omine, do-omine, do-omine, do-omine, do-omine, do-omine)
+    Ameno, ameno dori-, ameno dori me
+    <br>
+    Ameno dori me, ameno do-
+    Dori me reo, ameno dori me
+    <br>
+    Ameno dori me, do-ori me o-
+    Ameno do re-, ameno dori me
+    Ameno dori me, ameno do-
+    <br>
+    (Dori me reo)
+    (Ameno dori me)
+    </p>
+    
+    <a 
+    *ngIf="!isLoggedIn"
+    routerLink="/login" mat-icon-button class="example-icon favorite-icon" aria-label="icon-button for login">
+      <div class="container text-center left100">
+        <button type="submit" mat-raised-button color="primary">Login</button>
+    </div>
+    </a>
+    
+    
+        <!-- <div class="left100" (click)="logout()"
+        *ngIf="isLoggedIn">
+            <button type="submit" mat-raised-button color="warn">Logout</button>
+        </div> -->
+    
+           
+        <div *ngIf="isLoggedIn">
+            <button (click)="formSubmit()" class="left100" type="submit" mat-raised-button color="primary">Go to Exam Page</button>
+        </div>
+        
+       
+    
+</body>
+</html>
+
+
+
+

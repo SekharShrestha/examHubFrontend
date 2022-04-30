@@ -1,0 +1,99 @@
+<div class="bootstrap-wrapper" *ngIf="!isSubmit">
+    <div class="container-fluid">
+        <div class="row left-margin">
+            <!-- <div class="col-md-2">
+
+            </div> -->
+    
+            <div class="col-md-10">
+                <ng-container *ngIf="questions">
+                    <h1>{{questions[0].exam.title}} Exam</h1>
+                </ng-container>
+
+                <mat-card *ngFor="let q of questions; let i = index">
+                    <mat-card-content>
+                        <p><b>Q{{i+1}}.</b> {{q.content}}</p>
+                    </mat-card-content>
+
+                    <div class="row left-margin">
+                        <input [(ngModel)]="q.givenAnswer" type="radio"  [value]="q.option1" name={{i}} />
+                        {{q.option1}};
+                    </div>
+                    <div class="row left-margin">
+                        <input type="radio" [value]="q.option2" name={{i}} [(ngModel)]="q.givenAnswer"/>
+                        {{q.option2}};
+                    </div>
+                    <div class="row left-margin">
+                        <input type="radio" [value]="q.option3" name={{i}} [(ngModel)]="q.givenAnswer"/>
+                        {{q.option3}};
+                    </div>
+                    <div class="row left-margin">
+                        <input type="radio" [value]="q.option4" name={{i}} [(ngModel)]="q.givenAnswer"/>
+                        {{q.option4}};
+                    </div>
+                </mat-card>
+
+                
+                <mat-card-actions class="left-margin">
+                    <button (click)="submitExam()" class="left-margin" type="submit" mat-raised-button color="warn">Submit</button>
+                </mat-card-actions>
+    
+            </div>
+    
+            <div class="col-md-2" >
+                <mat-card>
+                    <mat-card-header>
+                        <b>Exam will be submitted automatically when timer reaches 0:0</b>
+                        
+                        <br>
+                        <!-- <mat-card-subtitle>
+                            Exam will be automatically submitted once the timer reaches 0
+                        </mat-card-subtitle> -->
+                    </mat-card-header>
+                    <br>
+                
+                <mat-card-content>
+                    <h1 class="text-center">{{getFormattedTime()}}</h1>
+                    <mat-spinner 
+                    mode="determinate" 
+                    color="warn" 
+                    style="margin:auto" 
+                    [value]="(timer/((this.questions.length/5)*60))*100"></mat-spinner>
+                </mat-card-content>
+                 </mat-card>
+    
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="bootstrap-wrapper" *ngIf="isSubmit">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        <h1>Result</h1>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="left-margin">
+                    <h2>Marks Got : {{marksGot}}</h2>
+                    <h2>Correct Attempts : {{correct}}</h2>
+                    <h2>Total Attempts: {{attempted}}</h2>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card-actions class="left-margin">
+                <button (click)="printPage()" class="left-margin" mat-raised-button color="primary">Print</button>
+                <button routerLink="/user-dashboard/0" class="left-margin" mat-raised-button color="warn">Back</button>
+            </mat-card-actions>
+
+            
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>
+                            <h1><b>Read the instructions carefully</b></h1>
+                        </mat-card-title>
+
+                    </mat-card-header>
+                        
+                    <mat-card-content class="left-margin">
+
+                        <h2>{{exam.title}}</h2>
+                        <p>{{exam.description}}</p>
+
+                        <mat-divider></mat-divider>
+
+                        <br>
+                        <h2>Instructions</h2>
+                        <ul>
+                            <li>All Questions must be attempted, or else the marks got will be counted as 0, irrespective of the correct answers attempted</li>
+                            <li>Dori me</li>
+                            <li>Interimo adapare dori me</li>
+                            <li>Ameno, ameno, latire, latire mo</li>
+                            <li>Dori me</li>
+                            <li>Ameno</li>
+                        </ul>
+
+
+                    </mat-card-content>
+
+                    <mat-card-actions class="left-margin">
+                        <button (click)="startExam()"  class="left-margin" type="submit" mat-raised-button color="warn">Start Exam</button>
+                    </mat-card-actions>
+                    
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

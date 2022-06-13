@@ -1,4 +1,14 @@
-<app-navbar></app-navbar>
+<ngx-ui-loader 
+fgsColor="grey" 
+pbColor="black"
+text="Loading..."
+textColor="white">
+</ngx-ui-loader>
 
 
-<router-outlet></router-outlet>
+
+<div ngxUiLoaderBlurred>
+    <!-- This page content will be blurred/frosted when foreground loader is showed -->
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+  </div>

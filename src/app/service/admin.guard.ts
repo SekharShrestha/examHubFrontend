@@ -9,7 +9,7 @@ import { LoginService } from './login.service';
 export class AdminGuard implements CanActivate {
 
 constructor(private login: LoginService, private router: Router){}
-
+  //if canActivate = true, then route can be accessed, else no
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

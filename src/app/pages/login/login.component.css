@@ -5,3 +5,13 @@
 .left-margin{
     margin-left: 20px;
 }
+
+.background{
+    width: 100%;
+    height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../assets/wp6942344.jpg');
+    background-position: center;
+}

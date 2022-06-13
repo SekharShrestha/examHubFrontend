@@ -40,6 +40,7 @@ import { LoadExamComponent } from './pages/user/load-exam/load-exam.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 
@@ -84,7 +85,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatCardModule,
     MatTableModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true
+    })
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
